@@ -12,15 +12,15 @@ const config: any = {
     mode: Phaser.Scale.ENVELOP,
     parent: 'app',
     autoCenter: Phaser.Scale.CENTER_BOTH,
-    width: 750,
-    height: 1334,
+    width: 1334,
+    height: 750,
     min: {
-      width: 750,
-      height: 1334
+      width: 1334,
+      height: 750
     },
     max: {
-      width: 750,
-      height: 1334
+      width: 1334,
+      height: 750
     }
   },
   scene

@@ -1,1 +1,5 @@
+export { default as Preloader } from './Preloader'
+export { default as Home } from './Home'
+export { default as List } from './List'
 export { default as Main } from './Main'
+export { default as MoreLifes } from './MoreLifes'
