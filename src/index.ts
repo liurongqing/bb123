@@ -14,14 +14,15 @@ const config: any = {
     autoCenter: Phaser.Scale.CENTER_BOTH,
     width: 1334,
     height: 750,
-    min: {
-      width: 1334,
-      height: 750
-    },
-    max: {
-      width: 1334,
-      height: 750
-    }
+    orientation: 'landscape'
+    // min: {
+    //   width: 1334,
+    //   height: 750
+    // },
+    // max: {
+    //   width: 1334,
+    //   height: 750
+    // }
   },
   scene
 }

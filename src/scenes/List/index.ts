@@ -4,9 +4,14 @@ export default class ListScene extends Phaser.Scene {
     super('ListScene')
   }
 
-  preload() {
-    console.log('listscene preload...')
-  }
+  create() {
+    const bg = this.add.image(0, 0, 'bg1').setOrigin(0)
+    const listFrame = this.add.image(0, 0, 'list_frame')
+    Phaser.Display.Align.In.Center(listFrame, bg)
 
-  create() {}
+    const backSprite = this.add.sprite(100, 100, 'back').setInteractive()
+    backSprite.on('pointerdown', () => {
+      this.scene.start('HomeScene')
+    })
+  }
 }
