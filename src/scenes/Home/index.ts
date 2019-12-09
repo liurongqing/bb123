@@ -18,6 +18,8 @@ export default class HomeScene extends Phaser.Scene {
     homeStartButton.on('pointerdown', () => {
       this.scene.start('ListScene')
     })
+
+    // console.log(this.scale.lockOrientation('landscape'))
     // this.scene.start('ListScene')
   }
 }

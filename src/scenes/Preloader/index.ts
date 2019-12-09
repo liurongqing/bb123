@@ -4,6 +4,15 @@ export default class PreloaderScene extends Phaser.Scene {
     super('PreloaderScene')
   }
 
+  init(){
+    // this.scale.orientation()
+    // window.game.scale.setGameSize(750, 1334)
+    // window.game.scale.setGameSize(1334, 750)
+    // this.cameras.main.setRotation(90)
+    // this.cameras.main.setSize(1334, 750);
+    // this.cameras.main.setSize(750, 1334);
+  }
+
   preload() {
     this.load.setBaseURL(BASE_URL)
     this.load.setPath(PATH_URL)
