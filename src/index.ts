@@ -10,12 +10,15 @@ const config = {
   backgroundColor: 0x000000,
   // forceOrientation: true,
   scale: {
-    mode: Phaser.Scale.ENVELOP,
+    // mode: Phaser.Scale.ENVELOP,
+    mode: Phaser.Scale.NONE,
     parent: 'app',
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+    // autoCenter: Phaser.Scale.CENTER_BOTH,
+    // width: 667,
+    // height: 375,
     width: 1334,
     height: 750,
-    orientation: Phaser.Scale.Orientation.LANDSCAPE
+    // orientation: Phaser.Scale.Orientation.LANDSCAPE
     // orientation: Phaser.Scale.Orientation.PORTRAIT
     // orientation: 'landscape'
     // min: {
