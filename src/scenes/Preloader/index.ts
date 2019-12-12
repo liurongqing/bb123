@@ -13,16 +13,16 @@ export default class PreloaderScene extends Phaser.Scene {
     // this.cameras.main.setSize(1334, 750);
     // this.cameras.main.setSize(750, 1334);
     // if()
-    console.log(
-      'this.scale.isGameLandscape %o, this.scale.isLandscape %o',
-      this.scale.isGameLandscape,
-      this.scale.isLandscape
-    )
+    // console.log(
+    //   'this.scale.isGameLandscape %o, this.scale.isLandscape %o',
+    //   this.scale.isGameLandscape,
+    //   this.scale.isLandscape
+    // )
     // console.log('canvas', docu)
-    if (this.scale.isGameLandscape != this.scale.isLandscape) {
-      // document.querySelector('canvas').style.transformOrigin = '0 0 0';
-      // document.querySelector('canvas').style.transform = 'rotate(90deg)'
-    }
+    // if (this.scale.isGameLandscape != this.scale.isLandscape) {
+    //   // document.querySelector('canvas').style.transformOrigin = '0 0 0';
+    //   // document.querySelector('canvas').style.transform = 'rotate(90deg)'
+    // }
   }
 
   preload() {

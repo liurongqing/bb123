@@ -4,6 +4,13 @@ export default class HomeScene extends Phaser.Scene {
     super('HomeScene')
   }
 
+  init() {
+    if (this.scale.isGameLandscape != this.scale.isLandscape) {
+      console.log('2...')
+      
+    }
+  }
+
   create() {
     const bg = this.add.image(0, 0, 'bg1').setOrigin(0)
     const homeFrame = this.add.image(0, 0, 'home_frame')
@@ -15,8 +22,10 @@ export default class HomeScene extends Phaser.Scene {
     Phaser.Display.Align.In.TopCenter(homeTitle, homeFrame, 0, -60)
     Phaser.Display.Align.In.BottomCenter(homeStartButton, homeFrame, 0, -65)
 
-    homeStartButton.on('pointerdown', () => {
-      this.scene.start('ListScene')
+    homeStartButton.on('pointerup', () => {
+      // this.scene.start('ListScene')
+      this.scale.startFullscreen()
+      screen.orientation.lock('landscape')
     })
 
     // console.log(this.scale.lockOrientation('landscape'))
