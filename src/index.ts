@@ -33,7 +33,7 @@ const config = {
   scene
 }
 
-window.game = new Phaser.Game(config)
+new Phaser.Game(config)
 
 // window.game.scale.setGameSize(1334, 750)
 // window.game.scale.setGameSize(750, 1334)
