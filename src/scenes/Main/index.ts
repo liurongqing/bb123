@@ -15,11 +15,27 @@ export default class MainScene extends Phaser.Scene {
     const frameImage = this.add.image(0, 0, 'main_frame')
     Phaser.Display.Align.In.Center(frameImage, bgImage)
 
+    // 返回
+    const backSprite = this.add.sprite(80, 80, 'back').setScale(0.7)
+    backSprite.setInteractive()
+    backSprite.on('pointerup', () => {
+      this.tweens.add({
+        targets: backSprite,
+        scale: 0.9,
+        duration: 100,
+        yoyo: true,
+        onComplete: () => {
+          // console.log('complete...', this.scene)
+          this.scene.start('ListScene')
+        }
+      })
+    })
+
     // 标题
     const text = this.add.text(0, 0, 'Question 15', {
-      fontSize: '50px'
+      font: '58px riffic'
     })
-    Phaser.Display.Align.In.TopLeft(text, frameImage, -130, -26)
+    Phaser.Display.Align.In.TopLeft(text, frameImage, -130, -18)
 
     // 时间
     const progressBgImage = this.add.image(0, 0, 'main_time_progress_bg')
@@ -41,7 +57,6 @@ export default class MainScene extends Phaser.Scene {
     // 进度条
     const mask = progressBgImage.createBitmapMask()
     progressActiveImage.setMask(mask)
-    // console.log('progressActiveImage', progressActiveImage.x)
     const lastWidth = progressActiveImage.x - progressBgImage.width
     this.tweens.add({
       targets: progressActiveImage,
@@ -56,9 +71,9 @@ export default class MainScene extends Phaser.Scene {
     })
 
     // 题目
-    const TopicText = this.add.text(0, 0, 'in', {
+    const TopicText = this.add.text(0, 0, '1+1+2+3=?', {
       font: '100px riffic',
-      fill: '#00ff00'
+      fill: '#dca348'
     })
     Phaser.Display.Align.In.Center(TopicText, frameImage, 0, -20)
 
@@ -81,21 +96,33 @@ export default class MainScene extends Phaser.Scene {
 
     let answerText: any,
       groupIndex = 1
+
     Phaser.Actions.Call(
       groupItems.getChildren(),
       (group: any) => {
         group.setName(groupIndex)
         answerText = this.add.text(0, 0, String(groupIndex), {
-          fontSize: '50px',
-          fill: '#000000'
+          font: '50px riffic',
+          fill: '#ffffff'
         })
+        answerText.setShadow(3, 3, '#b66217', 2, true, true)
         groupIndex++
         Phaser.Display.Align.In.Center(answerText, group)
         group.setInteractive()
 
         group.on('pointerup', (gameObject: any) => {
+          this.tweens.add({
+            targets: group,
+            scale: 1.2,
+            duration: 100,
+            yoyo: true,
+            onComplete: () => {
+              console.log('group.name', group.name)
+              // this.scene.start('MainScene')
+            }
+          })
           // console.log(gameObject)
-          console.log(group.name)
+          // console.log(group.name)
         })
       },
       this

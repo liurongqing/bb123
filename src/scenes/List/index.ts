@@ -37,30 +37,49 @@ export default class ListScene extends Phaser.Scene {
     // 循环设置
     let levelText: any,
       pinImage: any,
+      starImage: any,
       groupIndex = 1
     Phaser.Actions.Call(
       groupItems.getChildren(),
       function(group: any) {
+        group.setName(groupIndex)
+        starImage = this.add.image(0, 0, 'star2')
         levelText = this.add.text(0, 0, String(groupIndex), {
           fontFamily: 'riffic',
           fontSize: 70 - (String(groupIndex).length - 1) * 10
         })
+        levelText.setShadow(3, 3, '#0395a0', 2, true, true)
         pinImage = this.add.image(
           0,
           0,
           `list_pin_${groupIndex % 4 === 1 ? 'right' : 'left'}`
         )
-        levelText.setShadow(3, 3, '#0395a0', 2, true, true)
         groupIndex++
+        Phaser.Display.Align.In.Center(starImage, group)
         Phaser.Display.Align.In.Center(levelText, group)
         Phaser.Display.Align.In.TopLeft(
           pinImage,
           group,
-          Phaser.Math.Between(-20, -60),
+          Phaser.Math.Between(-20, -70),
           10
         )
+        group.setInteractive()
+        group.on('pointerup', () => {
+          this.tweens.add({
+            targets: group,
+            rotation: 1,
+            duration: 100,
+            yoyo: true,
+            onComplete: () => {
+              console.log('groupIndex', group.name)
+              this.scene.start('MainScene')
+            }
+          })
+        })
       },
       this
     )
+
+    // this.scene.start('MainScene')
   }
 }
