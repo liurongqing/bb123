@@ -37,7 +37,7 @@ export default class HomeScene extends Phaser.Scene {
     })
 
     // console.log(this.scale.lockOrientation('landscape'))
-    // this.scene.start('MainScene')
+    this.scene.start('MainScene')
     // this.scene.start('ListScene')
   }
 

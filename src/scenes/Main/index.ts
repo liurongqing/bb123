@@ -32,10 +32,10 @@ export default class MainScene extends Phaser.Scene {
     })
 
     // 标题
-    const text = this.add.text(0, 0, 'Question 15', {
+    const text = this.add.text(0, 0, 'Level 02', {
       font: '58px riffic'
     })
-    Phaser.Display.Align.In.TopLeft(text, frameImage, -130, -18)
+    Phaser.Display.Align.In.TopLeft(text, frameImage, -190, -18)
 
     // 时间
     const progressBgImage = this.add.image(0, 0, 'main_time_progress_bg')
