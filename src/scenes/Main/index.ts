@@ -56,8 +56,8 @@ export default class MainScene extends Phaser.Scene {
     })
 
     // 题目
-    const TopicText = this.add.text(0, 0, '1+1=?', {
-      fontSize: '100px',
+    const TopicText = this.add.text(0, 0, 'in', {
+      font: '100px riffic',
       fill: '#00ff00'
     })
     Phaser.Display.Align.In.Center(TopicText, frameImage, 0, -20)

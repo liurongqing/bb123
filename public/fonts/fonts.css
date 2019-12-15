@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'riffic';
+  src: url('riffic-bold-webfont.woff2') format('woff2'),
+    url('riffic-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'trashhand';
+  src: url('TrashHand-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

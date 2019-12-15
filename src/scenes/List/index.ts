@@ -9,10 +9,10 @@ export default class ListScene extends Phaser.Scene {
   }
 
   create() {
-    const bg = this.add.image(0, 0, 'bg1').setOrigin(0)
+    const bgImage = this.add.image(0, 0, 'bg1').setOrigin(0)
 
     const frameImage = this.add.image(0, 0, 'list_frame')
-    Phaser.Display.Align.In.Center(frameImage, bg)
+    Phaser.Display.Align.In.Center(frameImage, bgImage)
 
     const prevSprite = this.add.sprite(0, 0, 'list_prev')
     const nextSprite = this.add.sprite(0, 0, 'list_next')

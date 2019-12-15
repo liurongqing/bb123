@@ -1,4 +1,5 @@
 import { BASE_URL, PATH_URL } from '@/const'
+
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
     super('PreloaderScene')
@@ -21,11 +22,16 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('list_item_bg', 'images/list_item_bg.png')
     this.load.image('main_frame', 'images/main_frame.png')
     this.load.image('main_time_progress_bg', 'images/main_time_progress_bg.png')
-    this.load.image('main_time_progress_active', 'images/main_time_progress_active.png')
+    this.load.image(
+      'main_time_progress_active',
+      'images/main_time_progress_active.png'
+    )
     this.load.image('main_clock', 'images/main_clock.png')
+
+    this.add.image(100, 100, 'loading_logo')
   }
 
   create() {
-    this.scene.start('HomeScene')
+    // this.scene.start('HomeScene')
   }
 }
