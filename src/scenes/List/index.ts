@@ -33,5 +33,34 @@ export default class ListScene extends Phaser.Scene {
       x: this.config.width / 2 - size * 2 + size / 2 + 4,
       y: this.config.height / 2 - size / 2 + 10
     })
+
+    // 循环设置
+    let levelText: any,
+      pinImage: any,
+      groupIndex = 1
+    Phaser.Actions.Call(
+      groupItems.getChildren(),
+      function(group: any) {
+        levelText = this.add.text(0, 0, String(groupIndex), {
+          fontFamily: 'riffic',
+          fontSize: 70 - (String(groupIndex).length - 1) * 10
+        })
+        pinImage = this.add.image(
+          0,
+          0,
+          `list_pin_${groupIndex % 4 === 1 ? 'right' : 'left'}`
+        )
+        levelText.setShadow(3, 3, '#0395a0', 2, true, true)
+        groupIndex++
+        Phaser.Display.Align.In.Center(levelText, group)
+        Phaser.Display.Align.In.TopLeft(
+          pinImage,
+          group,
+          Phaser.Math.Between(-20, -60),
+          10
+        )
+      },
+      this
+    )
   }
 }
