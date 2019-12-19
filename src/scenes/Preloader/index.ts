@@ -54,6 +54,7 @@ export default class PreloaderScene extends Phaser.Scene {
   loadAssets() {
     this.load.setBaseURL(BASE_URL)
     this.load.setPath(PATH_URL)
+    this.load.image('test', 'images/test.jpg')
     this.load.image('bg1', 'images/bg1.jpg')
     this.load.image('bg2', 'images/bg2.jpg')
     this.load.image('bg3', 'images/bg3.jpg')
